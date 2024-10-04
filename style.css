@@ -1,0 +1,222 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    background-color: #e0e0e0;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* This centers the content vertically */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 15px 20px;
+    display: block;
+    background-color: #d0d0d0;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #e8e8e8;
+}
+
+.sidebar ul li a.active {
+    background-color: #ffffff;
+    color: #007bff;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 40px;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    color: #007bff;
+    margin-top: 0;
+    page-break-after: avoid; /* Keep the heading with its content */
+}
+
+.project {
+    margin-bottom: 30px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+.social-links {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Resume-specific styles */
+#resume-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section {
+    margin-bottom: 20px;
+    page-break-inside: avoid; /* Prevent section from breaking across pages */
+}
+
+.job {
+    margin-bottom: 15px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+.job-title {
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.job-period {
+    font-style: italic;
+    color: #666;
+    white-space: nowrap;
+}
+
+.download-btn {
+    float: right;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        order: 2;
+        padding: 10px;
+    }
+
+    .sidebar ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+    }
+
+    .sidebar ul li a.active::after,
+    .sidebar ul li a.active::before,
+    .sidebar ul li:has(a.active)::after {
+        display: none;
+    }
+
+    .content {
+        order: 1;
+    }
+
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .job-period {
+        margin-top: 5px;
+    }
+}
+
+@media print {
+    .sidebar, .download-btn {
+        display: none;
+    }
+    #resume-content {
+        width: 100%;
+        padding-bottom: 20px; /* Reduced from 50px */
+    }
+    body {
+        margin-bottom: 20px; /* Reduced from 50px */
+    }
+    .section {
+        page-break-inside: avoid;
+    }
+    h2 {
+        page-break-after: avoid;
+    }
+}

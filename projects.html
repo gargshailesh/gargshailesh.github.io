@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shailesh Garg - Personal Projects</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <ul>
+                <li><a href="index.html">About Me</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="resume.html">Resume</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <div id="resume-content">
+                <section id="projects">
+                    <div class="project">
+                        <h2>1. Travel Chatbot</h2>
+                        <p>A Gen AI-powered chatbot to gather customer requirements for travel planning.</p>
+                        <div class="video-container">
+                            
+                            <video id="chatbot-video" controls poster="images/project1-poster-image.jpg">
+                                <source src="videos/travel-chatbot-demo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="custom-video-controls">
+                                <button>1x</button>
+                                <button>2x</button>
+                                <button>4x</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <h2>2. Gen AI Powered Personal Assistant</h2>
+                        <p>An intelligent personal assistant to help with various tasks. Click on the button in the bottom right corner to try it out!</p>
+                    </div>
+                    <div class="project">
+                        <h2>3. AI-Powered Travel Scheduler (WIP)</h2>
+                        <p>Create a custom itinerary by providing your starting point, desired destinations, and trip length.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/5ccab2d7-7127-429c-ae33-c12496c417c5/webchat/v2.1/config.js"></script>
+</body>
+</html>

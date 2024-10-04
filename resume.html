@@ -4,235 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shailesh Garg - Resume</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
+        @media print {
+            .sidebar, .download-btn {
+                display: none;
+            }
+            #resume-content {
+                width: 100%;
+            }
+        }
+        #resume-content {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
-        .header {
-            position: relative;
-            margin-bottom: 20px;
-            padding-top: 30px; /* Reduced space for link */
-        }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #2c3e50;
-            padding-bottom: 10px;
-            margin-top: 0;
-        }
-        h2 {
-            color: #2c3e50;
-            margin-top: 20px;
-        }
-        .contact-info {
+        .section {
             margin-bottom: 20px;
         }
-        .job, .education-item, .certification-item {
+        .job {
             margin-bottom: 15px;
-            position: relative;
         }
-        .job-title, .institution, .certification-name {
-            font-weight: bold;
-            margin-right: 150px; /* Make space for the date */
-        }
-        .job-period, .education-period, .certification-date {
-            font-style: italic;
-            color: #7f8c8d;
-            position: absolute;
-            right: 0;
-            top: 0;
-        }
-        ul {
-            padding-left: 20px;
-            margin-top: 5px;
-        }
-        .skills-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .skills-list li {
-            margin-bottom: 5px;
-        }
-        .button-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
+        .job-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
+            align-items: baseline;
+            flex-wrap: wrap;
         }
-        .back-link {
-            color: #3498db;
-            text-decoration: none;
+        .job-title {
             font-weight: bold;
-            font-size: 16px;
-            transition: color 0.3s;
+            margin-right: 15px;
         }
-        .back-link:hover {
-            color: #2980b9;
+        .job-period {
+            font-style: italic;
+            color: #666;
+            white-space: nowrap;
         }
         .download-btn {
-            background-color: #3498db;
+            float: right;
+            padding: 10px 20px;
+            background-color: #007bff;
             color: white;
-            padding: 10px 15px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            cursor: pointer;
             border: none;
-            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
         }
         .download-btn:hover {
-            background-color: #2980b9;
-        }
-
-        .pdf-mode {
-            font-size: 11px !important;
-        }
-        .pdf-mode h1 {
-            font-size: 20px !important;
-        }
-        .pdf-mode h2 {
-            font-size: 16px !important;
-        }
-        .pdf-mode .job-title,
-        .pdf-mode .institution,
-        .pdf-mode .certification-name {
-            font-size: 12px !important;
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div id="resume-content">
-        <div class="header">
-            <div class="button-container">
-                <a href="index.html" class="back-link">&lt; Back</a>
-                <button id="download-btn" class="download-btn" onclick="generatePDF()">Download PDF</button>
-            </div>
-            <h1>Shailesh Garg</h1>
-        </div>
-        <div class="contact-info">
-            gshailesh@gmail.com | +91 6362387853, 9986537666 | <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
-        </div>
-        
-        <p>Technology leader with 20+ years of experience in scaling engineering teams and driving innovation within high-growth product companies. Proven track record of aligning technology strategies with business objectives, managing end-to-end software development lifecycles and mentoring engineering teams.</p>
-        
-        <h2>Work Experience</h2>
-        
-        <div class="job">
-            <div class="job-title">Technical Advisor - Startups</div>
-            <div class="job-period">May 2024 - Till Now</div>
+    <div class="container">
+        <nav class="sidebar">
             <ul>
-                <li>Supporting startups with technical challenges and strategic insights</li>
-                <li>Developed a proof-of-concept chatbot for a Travel Tech startup using LLM and Langchain</li>
+                <li><a href="index.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="resume.html" class="active">Resume</a></li>
             </ul>
-        </div>
-        
-        <div class="job">
-            <div class="job-title">Co-founder & CTO - Docterz, Mumbai</div>
-            <div class="job-period">Jan 2023 - Apr 2024</div>
-            <ul>
-                <li>Developed a Go-To-Market (GTM) strategy focusing on three select features, enabling the launch of a Minimum Viable Product (MVP) for the patient loyalty program, resulting in 20% monthly customer growth within 2 months of feature launch</li>
-                <li>Led a product review and implemented Scrum, reducing customer support issue resolution by 40% and project overages to 20%, meeting initiative scope within 3 months</li>
-            </ul>
-        </div>
-        
-        <div class="job">
-            <div class="job-title">Managing Director - Engineering, Pokkt - Anymind Group, Bangalore</div>
-            <div class="job-period">Aug 2021 - Dec 2022</div>
-            <ul>
-                <li>Managed a cross-functional team of 30+ members, including data scientists, backend engineers, and DevOps specialists</li>
-                <li>Spearheaded collaboration with the Data Science team, providing daily guidance and mentorship, leading to a 70% profit increase for a specific product line</li>
-            </ul>
-        </div>
-        
-        <div class="job">
-            <div class="job-title">CTO - RevX, Bangalore</div>
-            <div class="job-period">Jun 2011 - Mar 2021</div>
-            <ul>
-                <li>Grew from Lead Engineer to CTO in 9 years, leading roadmap implementation, customer interaction, fostering innovation, and ensuring best practices and timely delivery in a high-growth environment</li>
-                <li>Bootstrapped the Cost per App Install business and scaled it to $1M revenue within the first year of inception by collaborating with sales, customer support, product and engineering</li>
-                <li>Led the engineering team in successfully achieving a 3X increase in traffic capacity to manage 100B Bid Requests / day, while simultaneously reducing bid listening costs by 70%</li>
-                <li>Increased team productivity by 3X through re-designed the architecture of the UI, reducing the page load time by 60% and code base by 80%</li>
-            </ul>
-        </div>
-        
-        <h2>Earlier Experience</h2>
-        <div class="job">
-            <div class="job-title">Lead QA Engineer - Amazon, Bangalore</div>
-            <div class="job-period">Apr 2007 - May 2011</div>
-        </div>
-        <div class="job">
-            <div class="job-title">Software Engineer - Webaroo, New Delhi</div>
-            <div class="job-period">Feb 2006 - Mar 2007</div>
-        </div>
-        <div class="job">
-            <div class="job-title">Sr. Software Engineer - Novell, Bangalore</div>
-            <div class="job-period">Jul 2004 - Jan 2006</div>
-        </div>
-        
-        <h2>Education</h2>
-        <div class="education-item">
-            <div class="institution">IIIT Bangalore, PGDIT</div>
-            <div class="education-period">Jul 2002 - Jun 2004</div>
-        </div>
-        <div class="education-item">
-            <div class="institution">IET Lucknow, Lucknow University, B.Tech. Chemical Engineering</div>
-            <div class="education-period">Jul 1997 - Jun 2001</div>
-        </div>
-        
-        <h2>Certifications and Skills</h2>
-        <div class="certification-item">
-            <div class="certification-name">Accelerated Management Program - Harappa School of Leadership</div>
-            <div class="certification-date">Nov 2023</div>
-        </div>
-        <div class="certification-item">
-            <div class="certification-name">KMP-I - Kanban University</div>
-            <div class="certification-date">Oct 2016</div>
-        </div>
-        <div class="certification-item">
-            <div class="certification-name">Certified Scrum Master - Scrum Alliance</div>
-            <div class="certification-date">Oct 2014</div>
-        </div>
-        <ul class="skills-list">
-            <li><strong>Technical Skills:</strong> Python, Generative AI, Big Data, Hadoop, Java, AWS, GCP, Langchain</li>
-            <li><strong>Databases:</strong> MySQL, PostgreSQL, Vertica, Redshift, Big Query, NoSQL</li>
-            <li><strong>Product Skills:</strong> Agile Methodologies, Best Practices, Product Prioritization</li>
-            <li><strong>Competencies:</strong> Mentorship, Scaling, Cross-Functional Team Collaboration, Cloud Computing, Architecture and Code Reviews</li>
-        </ul>
+        </nav>
+        <main class="content">
+            <button class="download-btn" onclick="downloadResume()">Download PDF</button>
+                <div id="resume-content">
+                    <h1>Shailesh Garg</h1>
+                    <div class="contact-info">
+                        gshailesh@gmail.com | +91 6362387853, 9986537666 | 
+                        <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+                    </div>
+
+                    <p>Technology leader with 20+ years of experience in scaling engineering teams and driving innovation within high-growth product companies. Proven track record of aligning technology strategies with business objectives, managing end-to-end software development lifecycles and mentoring engineering teams.</p>
+
+                    <div class="section">
+                        <h2>Work Experience</h2>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">Technical Advisor - Startups</div>
+                                <div class="job-period">May 2024 - Till Now</div>
+                            </div>
+                            <ul>
+                                <li>Supporting startups with technical challenges and strategic insights</li>
+                                <li>Developed a proof-of-concept chatbot for a Travel Tech startup using LLM and Langchain</li>
+                            </ul>
+                        </div>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">Co-founder & CTO - Docterz, Mumbai</div>
+                                <div class="job-period">Jan 2023 - Apr 2024</div>
+                            </div>
+                            <ul>
+                                <li>Developed a Go-To-Market (GTM) strategy focusing on three select features, enabling the launch of a Minimum Viable Product (MVP) for the patient loyalty program, resulting in 20% monthly customer growth within 2 months of feature launch</li>
+                                <li>Led a product review and implemented Scrum, reducing customer support issue resolution by 40% and project overages to 20%, meeting initiative scope within 3 months</li>
+                            </ul>
+                        </div>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">Managing Director - Engineering, Pokkt - Anymind Group, Bangalore</div>
+                                <div class="job-period">Aug 2021 - Dec 2022</div>
+                            </div>
+                            <ul>
+                                <li>Managed a cross-functional team of 30+ members, including data scientists, backend engineers, and DevOps specialists</li>
+                                <li>Spearheaded collaboration with the Data Science team, providing daily guidance and mentorship, leading to a 70% profit increase for a specific product line</li>
+                            </ul>
+                        </div>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">CTO - RevX, Bangalore</div>
+                                <div class="job-period">Jun 2011 - Mar 2021</div>
+                            </div>
+                            <ul>
+                                <li>Grew from Lead Engineer to CTO in 9 years, leading roadmap implementation, customer interaction, fostering innovation, and ensuring best practices and timely delivery in a high-growth environment</li>
+                                <li>Bootstrapped the Cost per App Install business and scaled it to $1M revenue within the first year of inception by collaborating with sales, customer support, product and engineering</li>
+                                <li>Led the engineering team in successfully achieving a 3X increase in traffic capacity to manage 100B Bid Requests / day, while simultaneously reducing bid listening costs by 70%</li>
+                                <li>Increased team productivity by 3X through re-designed the architecture of the UI, reducing the page load time by 60% and code base by 80%</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>Earlier Experience</h2>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">Lead QA Engineer - Amazon, Bangalore</div>
+                                <div class="job-period">Apr 2007 - May 2011</div>
+                            </div>
+                        </div>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">Software Engineer - Webaroo, New Delhi</div>
+                                <div class="job-period">Feb 2006 - Mar 2007</div>
+                            </div>
+                        </div>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">Sr. Software Engineer - Novell, Bangalore</div>
+                                <div class="job-period">Jul 2004 - Jan 2006</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>Education</h2>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">IIIT Bangalore, PGDIT</div>
+                                <div class="job-period">Jul 2002 - Jun 2004</div>
+                            </div>
+                        </div>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">IET Lucknow, Lucknow University, B.Tech. Chemical Engineering</div>
+                                <div class="job-period">Jul 1997 - Jun 2001</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>Certifications and Skills</h2>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">Accelerated Management Program - Harappa School of Leadership</div>
+                                <div class="job-period">Nov 2023</div>
+                            </div>
+                        </div>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">KMP-I - Kanban University</div>
+                                <div class="job-period">Oct 2016</div>
+                            </div>
+                        </div>
+                        <div class="job">
+                            <div class="job-header">
+                                <div class="job-title">Certified Scrum Master - Scrum Alliance</div>
+                                <div class="job-period">Oct 2014</div>
+                            </div>
+                        </div>
+                        <div class="skills-list">
+                            <p><strong>Technical Skills:</strong> Python, Generative AI, Big Data, Hadoop, Java, AWS, GCP, Langchain</p>
+                            <p><strong>Databases:</strong> MySQL, PostgreSQL, Vertica, Redshift, Big Query, NoSQL</p>
+                            <p><strong>Product Skills:</strong> Agile Methodologies, Best Practices, Product Prioritization</p>
+                            <p><strong>Competencies:</strong> Mentorship, Scaling, Cross-Functional Team Collaboration, Cloud Computing, Architecture and Code Reviews</p>
+                        </div>
+                    </div>
+                </div>
+    </div>
+        </main>
     </div>
 
     <script>
-        function generatePDF() {
+        function downloadResume() {
             const element = document.getElementById('resume-content');
-            const buttonContainer = document.querySelector('.button-container');
-    
-            // Remove the button container and add PDF mode class
-            buttonContainer.style.display = 'none';
-            element.classList.add('pdf-mode');
-
             const opt = {
-                margin: 10,
+                margin: [10, 10, 20, 10], // [top, left, bottom, right] margins in millimeters
                 filename: 'Shailesh_Garg_Resume.pdf',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             };
-
-            html2pdf().set(opt).from(element).save().then(() => {
-                // Remove PDF mode class and restore the button container
-                element.classList.remove('pdf-mode');
-                buttonContainer.style.display = '';
-            });
-        } 
+            html2pdf().set(opt).from(element).save();
+    }
     </script>
 </body>
 </html>
