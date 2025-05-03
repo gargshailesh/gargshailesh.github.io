@@ -23,9 +23,10 @@
                     <p>Generative AI Explorer | Tech Enthusiast | Learner</p>
                 </div>
                 <section id="about">
-                    <p>I'm a seasoned tech leader and innovator with over 20 years of experience in scaling engineering teams and driving technological advancements. As a former CTO and ex-Amazon engineer, I have a proven track record of aligning tech strategies with business goals in fast-paced product companies. My expertise spans various domains, including ad-tech, e-commerce, and most recently, generative AI.</p>
-                    <p>I'm now looking to embark on my entrepreneurial journey and am eager to connect with like-minded partners. If you're seeking a tech co-founder based in India, I would love to explore potential synergies.</p>
-                    <p>Reach out to me if you're a startup facing complex engineering challenges. I'm available to provide technical advisory services.</p>
+                    <p>After over two decades as a tech leader, driving advancements and scaling engineering teams – including my time as CTO at RevX and an engineer at Amazon – I'm now embarking on my entrepreneurial journey with TrustdAI.</p>
+<p>My extensive background in ad-tech, e-commerce, and the rapidly evolving field of generative AI has equipped me to align technology with strategic business objectives.</p>
+<p>I'm passionate about applying Generative AI to solve real-world problems and eager to brainstorm innovative AI-driven solutions.</p>
+<p>If you're looking to collaborate on exciting projects or need guidance to kickstart your generative AI idea, please reach out.</p>
                 </section>
                 <div class="social-links">
                     <a href="https://github.com/gargshailesh" target="_blank">GitHub</a>
@@ -34,8 +35,42 @@
             </div>
         </main>
     </div>
+
+    <script src="https://d2ug12dkmgcsv2.cloudfront.net/chat-widget.js"></script>
+    <script>
+            let widgetInstance = null;
+            // Initialize button
+            if (widgetInstance) {
+                widgetInstance.destroy();
+            }           
+            const token = 's3f5b_tk_2025_05_03_m3bw3sH34wr4d90';
+            const primaryColor = 'black';
+            const secondaryColor = 'white';
+            const shadeColor = 'gray';
+            const logoUrl = 'https://d2ug12dkmgcsv2.cloudfront.net/logo.png';
+            const backgroundUrl = 'https://d2ug12dkmgcsv2.cloudfront.net/bkgrnd_image.png';
+            const headerText = 'Chat with Shailesh';
+            const apiBaseUrl = 'https://api.trustdai.in';
+            //const apiBaseUrl = 'http://127.0.0.1:5000';
+            const signInMessage = "Sign In to chat with Shailesh's Assistant";
+            // In your demo page's JS, ensure these are picked up and passed to initChatWidget
+            // Example (pseudo):
+            // secondaryColor: document.getElementById('secondaryColor').value,
+            // shadeColor: document.getElementById('shadeColor').value, 
+            widgetInstance = window.ChatWidget.initChatWidget({
+                token: token,       
+                primaryColor: primaryColor,
+                secondaryColor: secondaryColor,
+                shadeColor: shadeColor,
+                logoUrl: logoUrl || undefined,
+                backgroundUrl: backgroundUrl || undefined,
+                apiBaseUrl: apiBaseUrl,
+                headerText: headerText,
+                signInMessage: signInMessage
+            });         
+    </script>
     
-    <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
-    <script src="https://mediafiles.botpress.cloud/5ccab2d7-7127-429c-ae33-c12496c417c5/webchat/v2.1/config.js"></script>
+    <!-- <script src="https://cdn.botpress.cloud/webchat/v2.1/inject.js"></script>
+    <script src="https://mediafiles.botpress.cloud/5ccab2d7-7127-429c-ae33-c12496c417c5/webchat/v2.1/config.js"></script> -->
 </body>
 </html>
